@@ -246,6 +246,7 @@ html {
         background-image: url(../img/png/restmobile.png);
       width: 100%;
       height: 20vh;
+      @include jobs;
       }
       
       }
@@ -256,6 +257,7 @@ html {
         background-image: url(../img/png/lambamobile.png);
         width: 100%;
         height: 20vh  ;
+        @include jobs;
       }
     }
     .black-block_three {
@@ -265,6 +267,7 @@ html {
         background-image: url(../img/png/alohamobile.png);
         width: 100%;
         height: 20vh;
+        @include jobs;
       } 
       }
     @keyframes black-block_apperance {
