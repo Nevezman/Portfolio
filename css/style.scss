@@ -56,6 +56,8 @@
         min-height: 11vh;
         @media (max-width: 650px) {
           min-height: 8vh;
+          animation-name: none;
+          opacity: 1;
         
         }
       
@@ -348,6 +350,7 @@ html {
     padding: 30px 10px;
   }
   .popup__content {
+    position: absolute;
     background-color: #fff;
     color: #000000;
     max-width: 500px;
