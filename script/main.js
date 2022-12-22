@@ -32,11 +32,19 @@ closePopupButton.addEventListener('click',() => { // Вешаем обработ
 let burger = document.querySelector('.burger__items'); // Само окно
 let openBurgerButtons = document.querySelectorAll('.burger__btn'); // Кнопки для показа окна
 let lines = document.querySelector('.burger__btn'); 
+let closeBurgerLinks = document.querySelectorAll('.menu_items')
 
 openBurgerButtons.forEach((button) => { // Перебираем все кнопки
   button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
       e.preventDefault(); // Предотвращаем дефолтное поведение браузера
       burger.classList.toggle('burger__open'); // И для самого окна
       lines.classList.toggle('burger__active');
+  })
+});
+closeBurgerLinks.forEach((links) => {
+  links.addEventListener('mouseup', (closeBurger) => {
+  closeBurger.preventDefault();
+  burger.classList.remove('burger__open');
+  lines.classList.remove('burger__active');
   })
 });
