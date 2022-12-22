@@ -1,4 +1,5 @@
 @import url(reset.css);
+
 @mixin title{
   font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -13,7 +14,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  min-height: 150px;
+  min-height: 17vh;
   margin-bottom: 80px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,9 +30,42 @@
    &:hover .text{ 
     display: flex;
     width: 100%;
-    min-height: 150px;
+    min-height: 17vh;
     background: rgba(59, 59, 59, 0.5);
+    @media (max-width: 1200px) {
+      min-height: 15vh;
+      @media (max-width: 1000px) {
+        min-height: 13vh;
+        @media (max-width: 850px) {
+          min-height: 11vh;
+          @media (max-width: 650px) {
+            min-height: 8vh;
+          
+          }
+        }
+      }
   }
+  
+ 
+  }
+@media (max-width: 1200px) {
+    min-height: 15vh;
+    @media (max-width: 1000px) {
+      min-height: 13vh;
+      @media (max-width: 850px) {
+        min-height: 11vh;
+        @media (max-width: 650px) {
+          min-height: 8vh;
+        
+        }
+      
+      }
+    
+    }
+  
+}
+
+
 }
   
 html {
@@ -60,6 +94,22 @@ html {
     max-width: 1160px;
     padding: 0px 10px;
     margin: 0 auto;
+    @media (max-width: 1200px) {
+        max-width: 1000px;
+        @media (max-width: 1000px) {
+          max-width: 850px;
+          @media (max-width: 850px) {
+            max-width: 650px;
+            @media (max-width: 650px) {
+              max-width: 480px;
+            
+          }
+        }
+        
+      }
+    }
+  
+ 
   }
   .menu {
   
@@ -85,25 +135,28 @@ html {
       color: #111111;
       font-size: 16px;
     }
-    .menu__btn { 
+   
+  }
+  .menu__btn { 
       
-      a{
-        background-color: #f5d003;
-        border: #000000 solid 1px;
-        padding: 15px 15px;
-        text-decoration: none;
-        color: #000000;
-        box-shadow: 6px 3px 10px black;
-        
-      }
-     
+    a{
+      background-color: #f5d003;
+      border: #000000 solid 1px;
+      padding: 15px 15px;
+      text-decoration: none;
+      color: #000000;
+      box-shadow: 6px 3px 10px black;
+      
     }
   }
  
   .orange-block {
     background:linear-gradient(#FFC700 75%, 75%, #000000);
     padding: 162px 0 100px 0;
-   
+    @media (max-width: 650px) {
+      background:linear-gradient(#FFC700);
+    
+    }
     .orange-block__text {
       max-width: 490px;
       padding-top: 30px;
@@ -117,9 +170,19 @@ html {
       gap: 40px;
       position: relative;
       z-index: 5;
+      @media (max-width: 650px) {
+        display: block;
+      
+      }
     }
     .orange-block__img {
       width: 50%;
+      height: 100%;
+      @media (max-width: 650px) {
+        width: 100%;
+      
+      }
+      
     }
     
   }
@@ -132,6 +195,16 @@ html {
     .blue-block__h2 {
       @include title;
        margin: 0 0 50px 180px;
+       @media (max-width: 850px) {
+        margin: 50px 0;
+        @media (max-width: 650px) {
+          font-size: 80px;
+          @media (max-width: 480px) {
+            font-size: 60px;
+          
+          }
+        }
+       }
       
     }
      .blue-block__text {
@@ -140,13 +213,19 @@ html {
        color: #fff;
        max-width: 780px;
        margin: 0px auto;
-       
+       @media (max-width: 650px) {
+        font-size: 15px;
+        @media (max-width: 480px) {
+          font-size: 12px;
+        
+        }
+      }
      }
      
   }
   .black-block {
     background:linear-gradient(#425465, #30363b, #121213);
-    padding: 50px;
+    padding: 50px 0px;
     .text-p {
       
       font-size: 30px;
@@ -161,15 +240,30 @@ html {
     .black-block_one{
       animation-delay: 0s;
       background-image: url(../img/png/rest.jpg);
+      @media (max-width: 480px) {
+        background-image: url(../img/png/restmobile.png);
+      width: 100%;
+      height: 20vh;
+      }
       
       }
     .black-block_two {
       animation-delay: 0.5s;
       background-image: url(../img/png/lamba.jpg);
+      @media (max-width: 480px) {
+        background-image: url(../img/png/lambamobile.png);
+        width: 100%;
+        height: 20vh  ;
+      }
     }
     .black-block_three {
       animation-delay: 1s;
-      background-image: url(../img/png/aloha.jpg);  
+      background-image: url(../img/png/aloha.jpg); 
+      @media (max-width: 480px) {
+        background-image: url(../img/png/alohamobile.png);
+        width: 100%;
+        height: 20vh;
+      } 
       }
     @keyframes black-block_apperance {
       0% {
@@ -276,4 +370,99 @@ html {
     
    }
   } 
+}
+.burger__wrap {
+  display: none;
+}
+.burger_menu {
+  display: block;
+  position: fixed;
+}
+.burger__btn{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  top: 30px;
+  left: 10px;
+  z-index: 10;
+  transition: 0.8s all ;
+  span{
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    transition: 0.8s all ;
+  }
+  span:nth-last-of-type(1) {
+    top: 0px;
+    
+  }
+  span:nth-last-of-type(2) {
+    top: 10px;
+  }
+  span:nth-last-of-type(3) {
+    top: 20px;
+  }
+  
+}
+
+.burger__btn.burger__active {
+  top: 38px;
+  left: 90%;
+  transition-delay: 0.2s;
+}
+
+.burger__btn.burger__active  span:nth-last-of-type(1){
+  top: 10px;
+  transform: rotate(45deg);
+}
+.burger__btn.burger__active span:nth-of-type(2){
+  background-color: transparent;
+}
+
+.burger__btn.burger__active  span:nth-last-of-type(3) {
+  top: 10px;
+  transform: rotate(-45deg);
+}
+
+
+
+.burger__items{
+position: fixed;
+width: 100%;
+height: 100%;
+background-color: antiquewhite;
+transform: translateX(-100%);
+transition: 1s;
+.menu_block li {
+  margin: 30px 20px;
+ list-style-type: none;
+}
+}
+.burger__items_x{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+
+
+.burger__items.burger__open {
+  transform: translateX(0px);
+}
+@media (max-width:480px) {
+  .burger__wrap{
+    display: block;
+    
+    .menu_img {
+      float: right;
+    }
+    .menu__btn {
+      margin: 80px 20px;
+    }
+  }
+  .menu__inner {
+    display: none;
+  }
 }

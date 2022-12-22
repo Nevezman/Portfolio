@@ -27,5 +27,16 @@ openPopupButtons.forEach((button) => { // Перебираем все кнопк
 closePopupButton.addEventListener('click',() => { // Вешаем обработчик на крестик
   popup.classList.remove('active'); // И с окна
   document.body.style.overflow = "";
-  document.body.style.paddingRight= ""
+  document.body.style.paddingRight= "";
+});
+let burger = document.querySelector('.burger__items'); // Само окно
+let openBurgerButtons = document.querySelectorAll('.burger__btn'); // Кнопки для показа окна
+let lines = document.querySelector('.burger__btn'); 
+
+openBurgerButtons.forEach((button) => { // Перебираем все кнопки
+  button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
+      e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+      burger.classList.toggle('burger__open'); // И для самого окна
+      lines.classList.toggle('burger__active');
+  })
 });
