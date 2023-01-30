@@ -1,0 +1,45 @@
+.menu {
+  background-color: #fff;
+}
+
+.orange-block {
+  background-color: #121213;
+  -webkit-animation: mymove 5s forwards;
+          animation: mymove 5s forwards;
+}
+@media (max-width: 650px) {
+  .orange-block {
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFC700));
+    background: linear-gradient(#FFC700);
+  }
+}
+@-webkit-keyframes mymove {
+  from {
+    background-color: rgb(10, 9, 9);
+  }
+  to {
+    background-color: rgb(231, 178, 32);
+  }
+}
+@keyframes mymove {
+  from {
+    background-color: rgb(10, 9, 9);
+  }
+  to {
+    background-color: rgb(231, 178, 32);
+  }
+}
+
+.blue-block {
+  background-color: #425465;
+}
+
+.black-block {
+  background: -webkit-gradient(linear, left top, left bottom, from(#425465), color-stop(#30363b), to(#121213));
+  background: linear-gradient(#425465, #30363b, #121213);
+}
+
+.footer {
+  background: -webkit-gradient(linear, left top, left bottom, from(#6e6e6e));
+  background: linear-gradient(#6e6e6e);
+}

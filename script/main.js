@@ -48,3 +48,44 @@ closeBurgerLinks.forEach((links) => {
   lines.classList.remove('burger__active');
   })
 });
+
+const botton = document.querySelector('.btn');
+const linkThem = document.querySelector('#link-them');
+const botton_b = document.querySelector('.btn_b');
+
+botton.addEventListener('click', e => {
+e.preventDefault();
+checkThem();
+addThemHTML();
+});
+
+botton_b.addEventListener('click', e => {
+  e.preventDefault();
+  checkThem();
+  addThemHTML();
+  });
+  
+
+function addThemHTML () {
+    
+    if (localStorage.getItem('them') === 'dark-them') {
+    linkThem.href = 'css/dark-them.css';
+    botton.firstChild.textContent ='brightness_4';
+    botton_b.firstChild.textContent ='brightness_4';
+    }else {
+        linkThem.href = 'css/light-them.css';
+        botton.firstChild.textContent ='brightness_5';
+        botton_b.firstChild.textContent ='brightness_5';
+    }
+    
+
+}
+
+function checkThem() {
+  if (localStorage.getItem('them') === 'dark-them') {
+    localStorage.setItem('them', 'light-them');
+    }else {
+        localStorage.setItem('them', 'dark-them');
+    }
+}
+addThemHTML();

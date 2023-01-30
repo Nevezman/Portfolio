@@ -1,0 +1,30 @@
+.menu {
+    background-color: #fff;
+}
+
+.orange-block {
+    background-color:#121213;
+    animation: mymove 5s forwards;
+    @media (max-width: 650px) {
+        background:linear-gradient(#FFC700);
+      
+      }
+
+@keyframes mymove {
+    from {background-color: rgb(10, 9, 9);}
+    to {background-color: rgb(231, 178, 32);}
+}
+}
+.blue-block {
+    background-color: #425465;
+
+}
+.black-block{
+    background:linear-gradient(#425465, #30363b, #121213);
+
+}
+
+.footer{
+    background:linear-gradient(#6e6e6e);
+
+}
